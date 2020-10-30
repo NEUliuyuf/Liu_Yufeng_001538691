@@ -38,6 +38,7 @@ public class ElectionMain {
         
         pd.newPerson("001"); // candidate for President
         pd.newPerson("002"); // candidate for President
+        
         pd.newPerson("003"); // candidate for Vice President
         pd.newPerson("004"); // candidate for Vice President
         pd.newPerson("005"); // candidate for Vice President
