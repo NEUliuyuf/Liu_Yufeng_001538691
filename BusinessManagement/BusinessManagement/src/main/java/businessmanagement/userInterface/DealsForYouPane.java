@@ -51,6 +51,8 @@ public class DealsForYouPane extends javax.swing.JPanel {
         BundleProductTable = new javax.swing.JTable();
         AddToCartButton = new javax.swing.JButton();
         BuyButton = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        adButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("宋体", 0, 24)); // NOI18N
         jLabel1.setText("Deals For You!");
@@ -118,6 +120,16 @@ public class DealsForYouPane extends javax.swing.JPanel {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("宋体", 0, 14)); // NOI18N
+        jLabel4.setText("New iPhone 12 pro is avilible now!");
+
+        adButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/businessmanagement/userInterface/iPhone 12.jpg"))); // NOI18N
+        adButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -129,32 +141,48 @@ public class DealsForYouPane extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(AddToCartButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BuyButton)
-                .addGap(76, 76, 76))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(adButton, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(AddToCartButton)
+                            .addGap(221, 221, 221)
+                            .addComponent(BuyButton))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(adButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)))
+                .addGap(29, 29, 29)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddToCartButton)
                     .addComponent(BuyButton))
@@ -195,6 +223,22 @@ public class DealsForYouPane extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_BuyButtonActionPerformed
 
+    private void adButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adButtonActionPerformed
+        // TODO add your handling code here:
+        int yesNo = JOptionPane.showConfirmDialog(this,"Do you want to buy iPhone 12 Pro?", "Swing Tester",
+               JOptionPane.YES_NO_OPTION,
+               JOptionPane.QUESTION_MESSAGE);
+        if(yesNo == JOptionPane.YES_OPTION){
+            Product product = business.pc.searchProductByName("iPhone 12 pro", 3);
+            Market market = customer.getMarket();
+            Channel channel = business.cl.searchChannel("Offical website");
+            Order order = new Order(market,channel,customer,product,null);
+            business.mo.addOrder(order);
+            customer.getOrderList().addOrder(order);
+            JOptionPane.showMessageDialog(null,"You have purchased " + product + ", your order number is: " + order.getNumber());
+        }
+    }//GEN-LAST:event_adButtonActionPerformed
+
     private void populateBundleTable(){
             DefaultTableModel dtm = (DefaultTableModel) BundleTable.getModel();
             dtm.setRowCount(0);
@@ -225,9 +269,11 @@ public class DealsForYouPane extends javax.swing.JPanel {
     private javax.swing.JTable BundleProductTable;
     private javax.swing.JTable BundleTable;
     private javax.swing.JButton BuyButton;
+    private javax.swing.JButton adButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
